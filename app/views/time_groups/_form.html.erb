@@ -1,0 +1,75 @@
+
+<%= form_for(@time_group, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <% if @time_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@time_group.errors.count, "error") %> prohibited this time_group from being saved:</h2>
+
+      <ul>
+      <% @time_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-3">
+      <div class="field">
+        <%= f.text_field :student_name, class: "form-control", placeholder: "student name", autofocus: true %>
+      </div>
+    </div>
+    <div class="col-xs-9">
+  <%# 30.times do %>
+    <table>
+      <thead>
+        <tr>
+          <th><div class="field">
+            <%= f.number_field :month, class: "form-control", placeholder: "month", autofocus: true %>
+          </div></th>
+          <th><div class="field">
+            <%= f.number_field :day, class: "form-control", placeholder: "day", autofocus: true %>
+          </div></th>
+          <th><div class="field">
+            <%= f.number_field :total_min, class: "form-control", placeholder: "total minutes", autofocus: true %>
+          </div></th>
+        </tr>
+      </thead>
+    </table>
+  <%# end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="col-xs-3">
+      <div class="field">
+        <%= f.text_field :student_name, class: "form-control", placeholder: "student name", autofocus: true %>
+      </div>
+    </div>
+    <div class="col-xs-9">
+  <%# 30.times do %>
+    <table>
+      <thead>
+        <tr>
+          <th><div class="field">
+            <%= f.number_field :month, class: "form-control", placeholder: "month", autofocus: true %>
+          </div></th>
+          <th><div class="field">
+            <%= f.number_field :day, class: "form-control", placeholder: "day", autofocus: true %>
+          </div></th>
+          <th><div class="field">
+            <%= f.number_field :total_min, class: "form-control", placeholder: "total minutes", autofocus: true %>
+          </div></th>
+        </tr>
+      </thead>
+    </table>
+  <%# end %>
+</div>
+    <div class="form-group">
+      <div class="col-xs-12 text-center">
+        <h3><br><br><%= f.submit class: "btn btn-primary btn-lg" %> [ <%= link_to "Cancel", root_path %> ]</h3><br><br>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
